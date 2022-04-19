@@ -1,0 +1,171 @@
+<html>
+
+<head>
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+    integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+    integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+    crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
+    integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN"
+    crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"
+    integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV"
+    crossorigin="anonymous"></script>
+  <title>Mortgage Backed Securities Prepayment Prediction System</title>
+</head>
+
+<body>
+  <!-- Java Script -->
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+    integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+    crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
+    integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN"
+    crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"
+    integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV"
+    crossorigin="anonymous"></script>
+
+
+  <!-- Navbar-->
+  <nav class="navbar navbar-dark bg-dark">
+    <span class="navbar-brand mb-0 h1">Mortgage Backed Securities Prepayment Prediction System</span>
+  </nav>
+  <div class="container">
+    <br>
+    <!--Form-->
+    <form  method="POST">
+      <fieldset>
+        <legend class="text-center">MBS Prediction System Form</legend><br>
+        <div class="card card-body">
+          <div class="form-group  row">
+            <div class="col-sm-3">
+              <label for="Credit_Score">Credit Score</label>
+              <input type="number" class="form-control" id="Credit_Score" name="Credit_Score" tabindex="1" required>
+            </div>
+            <div class="col-sm-3">
+              <label for="First_Time_Homebuyer_Flag">Is this your first home?</label>
+              <select class="form-control" id="First_Time_Homebuyer_Flag" name="First_Time_Homebuyer_Flag" required>
+                <option disabled selected value> -- Select an Option -- </option>
+                <option value="0">No</option>
+                <option value="1">Yes</option>
+              </select>
+            </div>
+            <div class="col-sm-3">
+              <label  for="Mortgage_Insurance_Percentage">Mortgage Insurance Percentage</label>
+              <input type="number" class="form-control" id="Mortgage_Insurance_Percentage"
+                name="Mortgage_Insurance_Percentage" required>
+            </div>
+            <div class="col-sm">
+              <label for="Number_Of_Units">Number Of Units</label>
+              <select class="form-control" id="Number_Of_Units" name="Number_Of_Units" required>
+                <option disabled selected value> -- Select an Option -- </option>
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+              </select>
+            </div>
+          </div>
+          <br>
+          <div class="form-group  row">
+            <div class="col-sm">
+              <label for="Occupancy_Status">Occupancy Status</label>
+              <select class="form-control" id="Occupancy_Status" name="Occupancy_Status" required>
+                <option disabled selected value> -- Select an Option -- </option>
+                <option value="0">Primary Residence</option>
+                <option value="1">Investment Property</option>
+                <option value="2">Second Home</option>
+              </select>
+            </div>
+            <div class="col-sm-3">
+              <label for="Original_Combined_Loan_To_Value">Original Combined Loan-To-Value</label>
+              <input type="number" class="form-control" id="Original_Combined_Loan_To_Value" name="Original_Combined_Loan_To_Value" required>
+            </div>
+            <div class="col-sm">
+              <label for="Original_Debt_To_Income_Ratio">Original Debt To Income Ratio</label>
+              <input type="number" class="form-control" id="Original_Debt_To_Income_Ratio" name="Original_Debt_To_Income_Ratio" required>
+            </div>
+            <div class="col-sm">
+              <label for="Original_UPB">Original UPB</label>
+              <input type="number" class="form-control" id="Original_UPB" name="Original_UPB" required>
+            </div>
+          </div>
+          <br>
+          <div class="form-group row">
+            <div class="col-sm">
+              <label for="Original_Loan_To_Value">Original Loan to Value</label>
+              <input type="number" class="form-control" id="Original_Loan_To_Value" name="Original_Loan_To_Value" required>
+            </div>
+            <div class="col-sm">
+              <label for="Original_Interest_Rate">Original Interest Rate</label>
+              <input type="decimal" class="form-control" id="Original_Interest_Rate" name="Original_Interest_Rate" required>
+            </div>
+            <div class="col-sm">
+              <label for="Prepayment_Penalty_Mortgage_Flag">Prepayment Penalty Mortgage Flag</label>
+              <select class="form-control" id="Prepayment_Penalty_Mortgage_Flag" name="Prepayment_Penalty_Mortgage_Flag" required>
+                <option disabled selected value> -- Select an Option -- </option>
+                <option value="0">PPM</option>
+                <option value="1">No PPM</option>
+              </select>
+            </div>
+            <div class="col-sm">
+              <label for="Product_Type">Product Type</label>
+              <select class="form-control" id="Product_Type" name="Product_Type" required>
+                <option disabled selected value> -- Select an Option -- </option>
+                <option value="0">True</option>
+                <option value="1">False</option>
+              </select>
+            </div>  
+          </div>
+          <br>
+          <div class="form-group  row">
+            <div class="col-sm">
+              <label for="Property_Type">Property Type</label>
+              <select class="form-control" id="Property_Type" name="Property_Type" required>
+                <option disabled selected value> -- Select an Option -- </option>
+                <option value="0">Condo</option>
+                <option value="1">Planned Unit Development</option>
+                <option value="2">Manufactured Housing</option>
+                <option value="3">Single Family Home</option>
+                <option value="4">Co-Op Home</option>
+              </select>
+            </div>
+            <div class="col-sm">
+              <label for="Loan_Purpose">Loan Purpose</label>
+              <select class="form-control" id="Loan_Purpose" name="Loan_Purpose" required>
+                <option disabled selected value> -- Select an Option -- </option>
+                <option value="0">Purchase</option>
+                <option value="1">Refinance</option>
+              </select>
+            </div>
+            <div class="col-sm-3">
+              <label for="Original_Loan_Term">Original Loan Term[In Months]</label>
+              <input type="number" class="form-control" id="Original_Loan_Term" name="Original_Loan_Term" required>
+            </div>
+            <div class="col-sm">
+              <label for="Number_Of_Borrowers">Number Of Borrowers</label>
+              <input type="number" class="form-control" id="Number_Of_Borrowers" name="Number_Of_Borrowers" required>
+            </div>
+          </div>
+          <br>
+
+          <div class="form-group">
+            <input class="btn btn-primary" type="submit" value="Result">
+          </div>
+
+          <!--Prediction Result-->
+          <div id="result">
+            <strong style="color:red">{{result}}</strong>
+          </div>
+        </div>
+      </fieldset>
+    </form>
+
+  </div>
+
+</body>
+
+</html>
